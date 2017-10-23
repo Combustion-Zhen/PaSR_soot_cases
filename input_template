@@ -1,0 +1,43 @@
+Chemistry model : Multistep
+Mixing model    : @MIXMODEL@
+
+Residence time  : @TRES@	!5e-02	!1e-02	!1e-04	!1e-03	!1e-01
+Mixing time     : @TMIX@	!1.25e-03 !2.5e-04	!2.5e-06 !1e-05	!5e-04	!2.5e-3
+dt factor       : 0.01
+dtr factor      : 0.001	!0.0025
+Max time        : @TMAX@	!2.0
+Number of particles : @NP@
+
+Use soot model          : .true.
+Use mom                 : @MOMINDEX@
+Number of moments       : @MOMNUM@
+Number of composition   : 101     ! nspecies+1
+Solve PAH equation      : .false.
+Soot oxidation          : .true.
+Soot fragmentation      : .true.
+Fuel species            : C2H4
+Zero soot diffusion     : @NOSOOTMIX@
+
+Number of streams   : 3
+Flow rates          : @FUELRATE@ 1.0 1.0
+!Flow rates          : 0.126	1.05	0.819	0.105 
+!Flow rates          : 1.0	1.0 	1.0
+
+!				F	O2	CO	CO2	OH	H2O	H2
+Species concentrations stream 1 : 1.0 	0.0	0.0	0.0	0.0	0.0	0.0
+Species concentrations stream 2 : 0.0	0.0197791	0.00138472	0.124127	0.00129672	0.096921	3.7e-5	
+!Species concentrations stream 2 : 0.0   0.0     1e-5    0.0     1e-5    0.0     1e-5
+Species concentrations stream 3 : 0.0   0.2320  0.0     0.0     0.0     0.0     0.0
+
+Temperature stream 1    : 500		!295
+Temperature stream 2    : 2000		!2250
+Temperature stream 3    : 500		!295
+Species init value      :  0.0   0.232
+Temperature init value  : 2000		!295
+Pressure                : 101325
+Output frequency        : 10
+Write PDF               : .false.
+Output full particle data : .true.
+
+CHO in fule strem       : 0.85628289408883340       0.14371710591116657     0.0
+CHO in oxdizer strem    : 0.00016700790387728324    5.6060661202566101E-004 0.23603136198869243

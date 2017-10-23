@@ -1,0 +1,4 @@
+# ignore dirs
+*/
+# output files
+*.op
