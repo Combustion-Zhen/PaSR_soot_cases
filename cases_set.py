@@ -24,6 +24,9 @@ with open('input_template','r') as template:
 with open('run_shaheen_template.sh','r') as template:
     lines_job = template.readlines();
 
+# case name string is combined with case parameters, in the sequence
+# MOM method, Mixing model, Equivalence ratio, Residence time,
+# Mixing time, Number of particles, Soot mixing flag
 case_param = [None]*7
 for mom, mom_v  in mom_methods.items():
     case_param[0] = mom

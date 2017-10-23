@@ -2,3 +2,7 @@
 */
 # output files
 *.op
+# json output
+*.json
+# swp
+.*.swp
