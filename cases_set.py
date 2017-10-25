@@ -31,21 +31,21 @@ case_param = [None]*7
 for mom, mom_v  in mom_methods.items():
     case_param[0] = mom
     for mix in mixing_models:
-        case_param[1] = '_{}'.format(mix)
+        case_param[1] = mix
         for phi in equiv_ratio:
             fuel_rate = phi*stoich_fuel_rate
-            case_param[2] = '_phi{:.1f}'.format(phi)
+            case_param[2] = 'phi{:.1f}'.format(phi)
             for tres in time_res:
                 tmax = max_res_ratio*tres
-                case_param[3] = '_tres{:.3e}'.format(tres)
+                case_param[3] = 'tres{:.3e}'.format(tres)
                 for tmix_ratio in mix_res_ratio:
                     tmix = tmix_ratio*tres
-                    case_param[4] = '_tmix{:.3e}'.format(tmix)
+                    case_param[4] = 'tmix{:.3e}'.format(tmix)
                     for np, nd in num_particles.items():
-                        case_param[5] = '_np{:g}'.format(np)
+                        case_param[5] = 'np{:g}'.format(np)
                         for soot_k, soot_v in soot_mix.items():
-                            case_param[6] = '_soot-{}'.format(soot_k)
-                            case = ''.join(case_param)
+                            case_param[6] = 'soot-{}'.format(soot_k)
+                            case = '_'.join(case_param)
                             # make case directory
                             os.makedirs(case,exist_ok=True)
                             # set input file
